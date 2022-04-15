@@ -1,0 +1,119 @@
+@import "./variables";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+}
+
+@mixin displayFlex(){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    background: $primary_color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .container{
+        background: $second_color;
+        @include displayFlex();
+        width: 30%;
+        height: 100vh;
+        h2{
+            color: $primary_color;
+        }
+        .voice__btn-box{
+            margin-top: 0.5rem;
+            background: $third_color;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 15px 15px 0 0;
+            @include displayFlex();
+            .voice__btn-icon{
+                @include displayFlex();
+                margin-top: 5px;
+                background: $primary_color;
+                padding: 20px;
+                border-radius: 50%;
+                cursor: pointer;
+                &:hover{
+                    i{
+                        font-size: 55px;
+                        padding: 0px;
+                    }
+                }
+                i{
+                    color: $second_color;
+                }
+            }
+        }
+        .text__container{
+            height: 50vh;
+            width: 80%;
+            background: $third_color;
+            border-radius: 10px;
+            color: $primary_color;
+            font-weight: bold;
+            overflow: scroll;
+            p{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1240px){
+    body{
+        .container{
+            width: 35%;
+            h2{
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    body{
+        .container{
+            width: 40%;
+            h2{
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    body{
+        .container{
+            width: 60%;
+            h2{
+                font-size: 25px;
+            }
+            .voice__btn-box{
+                width: 2rem;
+                height: 2rem;
+                .voice__btn-icon{
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px){
+    body{
+        .container{
+            width: 90%;
+            h2{
+                font-size: 30px;
+            }
+        }
+    }
+}
